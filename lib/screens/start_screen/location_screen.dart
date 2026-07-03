@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_project/screens/main_screen.dart';
 import 'package:test_project/screens/start_screen/widgets/location_icon.dart';
 import 'package:test_project/screens/start_screen/widgets/onboarding_scaffold.dart';
 
@@ -42,7 +43,7 @@ class _LocationScreenState extends State<LocationScreen> {
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
-        builder: (_) => const HomeScreen(),
+        builder: (_) => const MainScreen(),
       ),
     );
   }
@@ -74,23 +75,4 @@ class _LocationScreenState extends State<LocationScreen> {
   }
 }
 
-/// Temporary Home Screen
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: AppColors.background,
-      body: Center(
-        child: Text(
-          "Home Screen",
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
-    );
-  }
-}

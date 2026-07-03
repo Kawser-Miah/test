@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'screens/create/create_community_screen.dart';
+import 'screens/create/create_event_screen.dart';
 import 'splash/splash_screen.dart';
 
 void main() {
@@ -17,6 +19,10 @@ class VibeNowApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const SplashScreen(),
+      routes: {
+        '/create-event': (context) => const CreateEventScreen(),
+        '/create-community': (context) => const CreateCommunityScreen(),
+      },
     );
   }
 }
