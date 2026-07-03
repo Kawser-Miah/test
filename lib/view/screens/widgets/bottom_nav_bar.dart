@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class BottomNavBar extends StatelessWidget {
   final int currentIndex;
@@ -34,7 +35,7 @@ class BottomNavBar extends StatelessWidget {
             children: [
               // 0 - Location
               _NavItem(
-                icon: Icons.location_on_outlined,
+                assetName: 'location',
                 index: 0,
                 currentIndex: currentIndex,
                 onTap: onTap,
@@ -42,7 +43,7 @@ class BottomNavBar extends StatelessWidget {
 
               // 1 - Community (People)
               _NavItem(
-                icon: Icons.people_outline_rounded,
+                assetName: 'comunity',
                 index: 1,
                 currentIndex: currentIndex,
                 onTap: onTap,
@@ -56,7 +57,7 @@ class BottomNavBar extends StatelessWidget {
 
               // 3 - Messages (Chat)
               _NavItem(
-                icon: Icons.chat_bubble_outline_rounded,
+                assetName: 'chat',
                 index: 3,
                 currentIndex: currentIndex,
                 onTap: onTap,
@@ -64,7 +65,7 @@ class BottomNavBar extends StatelessWidget {
 
               // 4 - Profile
               _NavItem(
-                icon: Icons.person_outline_rounded,
+                assetName: 'profile',
                 index: 4,
                 currentIndex: currentIndex,
                 onTap: onTap,
@@ -78,13 +79,13 @@ class BottomNavBar extends StatelessWidget {
 }
 
 class _NavItem extends StatelessWidget {
-  final IconData icon;
+  final String assetName;
   final int index;
   final int currentIndex;
   final ValueChanged<int> onTap;
 
   const _NavItem({
-    required this.icon,
+    required this.assetName,
     required this.index,
     required this.currentIndex,
     required this.onTap,
@@ -94,6 +95,8 @@ class _NavItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final bool isActive = currentIndex == index;
 
+    final assetPath = 'assets/nav_icon/$assetName${isActive ? '_fill' : ''}.svg';
+
     return GestureDetector(
       onTap: () => onTap(index),
       behavior: HitTestBehavior.opaque,
@@ -101,17 +104,11 @@ class _NavItem extends StatelessWidget {
         width: 52,
         height: 68,
         child: Center(
-          child: isActive
-              ? ShaderMask(
-                  shaderCallback: (bounds) => const LinearGradient(
-                    colors: [Color(0xFF4DB6FF), Color(0xFF8B5CF6)],
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
-                  ).createShader(bounds),
-                  blendMode: BlendMode.srcIn,
-                  child: Icon(icon, size: 26, color: Colors.white),
-                )
-              : Icon(icon, size: 26, color: const Color(0xFFB0B0B0)),
+          child: SvgPicture.asset(
+            assetPath,
+            width: 26,
+            height: 26,
+          ),
         ),
       ),
     );
@@ -160,16 +157,16 @@ class _CenterFab extends StatelessWidget {
             ),
           ],
         ),
-        child: Container(
+          child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(36),
             color: Colors.transparent,
           ),
-          child: const Center(
-            child: Icon(
-              Icons.add_box_outlined,
-              color: Colors.white,
-              size: 20,
+          child: Center(
+            child: SvgPicture.asset(
+              'assets/nav_icon/plus.svg',
+              width: 20,
+              height: 20,
             ),
           ),
         ),
