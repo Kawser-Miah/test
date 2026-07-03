@@ -105,13 +105,16 @@ class _CreatePostPageState extends State<CreatePostPage> {
             color: const Color(0xFFF2F2F2),
             shape: BoxShape.circle,
           ),
-          child: SvgPicture.asset(
-            'assets/logo/qr.svg',
-            width: 18,
-            height: 18,
-            colorFilter: const ColorFilter.mode(
-              Colors.black87,
-              BlendMode.srcIn,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SvgPicture.asset(
+              'assets/logo/qr.svg',
+              width: 14,
+              height: 14,
+              colorFilter: const ColorFilter.mode(
+                Colors.black87,
+                BlendMode.srcIn,
+              ),
             ),
           ),
         ),
