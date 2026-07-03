@@ -19,6 +19,9 @@ class OnboardingScaffold extends StatelessWidget {
   final bool showBackButton;
   final bool buttonEnabled;
 
+  /// Optional widget rendered between the title and subtitle
+  final Widget? headerChild;
+
   const OnboardingScaffold({
     super.key,
     required this.currentStep,
@@ -30,6 +33,7 @@ class OnboardingScaffold extends StatelessWidget {
     required this.onButtonPressed,
     this.showBackButton = true,
     this.buttonEnabled = true,
+    this.headerChild,
   });
 
   @override
@@ -84,17 +88,24 @@ class OnboardingScaffold extends StatelessWidget {
                       ),
                     ),
 
+                    if (headerChild != null) ...[
+                      const SizedBox(height: 32),
+                      Center(child: headerChild!),
+                    ],
+
                     const SizedBox(height: 10),
 
-                    Text(
-                      subtitle,
-                      style: const TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        height: 1.5,
-                        color: AppColors.textSecondary,
+                    Center(
+                      child: Text(
+                        subtitle,
+                        style: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          height: 1.5,
+                          color: AppColors.textSecondary,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      textAlign: TextAlign.center,
                     ),
 
                     const SizedBox(height: 32),
