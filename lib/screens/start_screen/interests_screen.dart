@@ -4,7 +4,6 @@ import 'package:test_project/screens/start_screen/widgets/interest_card.dart';
 import 'package:test_project/screens/start_screen/widgets/onboarding_scaffold.dart';
 import 'package:test_project/screens/start_screen/widgets/option_card.dart';
 
-
 import 'gender_screen.dart';
 import 'looking_for_screen.dart';
 
@@ -30,54 +29,18 @@ class _InterestsScreenState extends State<InterestsScreen> {
   final List<String> _selectedInterests = [];
 
   final List<Map<String, dynamic>> _interests = [
-    {
-      "title": "Coffee",
-      "icon": Icons.coffee_outlined,
-    },
-    {
-      "title": "Music",
-      "icon": Icons.music_note_rounded,
-    },
-    {
-      "title": "Chat",
-      "icon": Icons.chat_bubble_outline_rounded,
-    },
-    {
-      "title": "Sports",
-      "icon": Icons.sports_gymnastics_rounded,
-    },
-    {
-      "title": "Books",
-      "icon": Icons.menu_book_rounded,
-    },
-    {
-      "title": "Photo",
-      "icon": Icons.camera_alt_outlined,
-    },
-    {
-      "title": "Art",
-      "icon": Icons.palette_outlined,
-    },
-    {
-      "title": "Tech",
-      "icon": Icons.hub_outlined,
-    },
-    {
-      "title": "Food",
-      "icon": Icons.restaurant_rounded,
-    },
-    {
-      "title": "Travel",
-      "icon": Icons.flight_takeoff_rounded,
-    },
-    {
-      "title": "Fitness",
-      "icon": Icons.fitness_center_rounded,
-    },
-    {
-      "title": "Gaming",
-      "icon": Icons.sports_esports_rounded,
-    },
+    {"title": "Coffee", "icon": Icons.coffee_outlined},
+    {"title": "Music", "icon": Icons.music_note_rounded},
+    {"title": "Chat", "icon": Icons.chat_bubble_outline_rounded},
+    {"title": "Sports", "icon": Icons.sports_gymnastics_rounded},
+    {"title": "Books", "icon": Icons.menu_book_rounded},
+    {"title": "Photo", "icon": Icons.camera_alt_outlined},
+    {"title": "Art", "icon": Icons.palette_outlined},
+    {"title": "Tech", "icon": Icons.hub_outlined},
+    {"title": "Food", "icon": Icons.restaurant_rounded},
+    {"title": "Travel", "icon": Icons.flight_takeoff_rounded},
+    {"title": "Fitness", "icon": Icons.fitness_center_rounded},
+    {"title": "Gaming", "icon": Icons.sports_esports_rounded},
   ];
 
   void _toggleInterest(String interest) {
@@ -124,25 +87,20 @@ class _InterestsScreenState extends State<InterestsScreen> {
       child: GridView.builder(
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
-
         itemCount: _interests.length,
-
-        gridDelegate:
-        const SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 16,
           mainAxisSpacing: 16,
-          childAspectRatio: .95,
+          childAspectRatio: 2,
         ),
-
         itemBuilder: (context, index) {
           final item = _interests[index];
 
           final title = item["title"] as String;
-
           final icon = item["icon"] as IconData;
 
-          return OptionCard(
+          return InterestCard(
             title: title,
             icon: icon,
             selected: _selectedInterests.contains(title),

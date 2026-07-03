@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-class InterestCard extends StatelessWidget {
+class LookingForCard extends StatelessWidget {
   final String title;
   final IconData icon;
   final bool selected;
   final VoidCallback onTap;
 
-  const InterestCard({
+  const LookingForCard({
     super.key,
     required this.title,
     required this.icon,
@@ -18,13 +18,13 @@ class InterestCard extends StatelessWidget {
     return Material(
       color: Colors.transparent,
       child: InkWell(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(22),
         onTap: onTap,
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 200),
           decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(22),
             border: Border.all(
               color: selected
                   ? const Color(0xff8B5CF6)
@@ -37,15 +37,16 @@ class InterestCard extends StatelessWidget {
             children: [
               Icon(
                 icon,
-                size: 26,
+                size: 28,
                 color: const Color(0xff767676),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 14),
               Text(
                 title,
+                textAlign: TextAlign.center,
                 style: const TextStyle(
                   fontFamily: "Manrope",
-                  fontSize: 15,
+                  fontSize: 16,
                   fontWeight: FontWeight.w500,
                   color: Color(0xff666666),
                 ),
