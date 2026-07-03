@@ -1,8 +1,9 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:test_project/screens/start_screen/widgets/upload_placeholder_icon.dart';
 
-import '../../../theme/app_colors.dart';
+import 'dashed_border_painter.dart';
 
 class UploadPhotoTile extends StatelessWidget {
   final File? image;
@@ -18,60 +19,37 @@ class UploadPhotoTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 1,
+    return SizedBox(
+      width: 104,
+      height: 129,
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(24),
           onTap: onTap,
-          child: AnimatedContainer(
-            duration: const Duration(milliseconds: 250),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
-              border: Border.all(
-                color: AppColors.border,
-              ),
-            ),
-            child: image == null
-                ? _buildPlaceholder()
-                : _buildImage(),
-          ),
+          child: image == null
+              ? _buildPlaceholder()
+              : _buildImage(),
         ),
       ),
     );
   }
 
   Widget _buildPlaceholder() {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            width: 54,
-            height: 54,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.grey.shade100,
-            ),
-            child: const Icon(
-              Icons.add,
-              size: 30,
-              color: AppColors.icon,
-            ),
+    return CustomPaint(
+      painter: DashedBorderPainter(),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: const Center(
+          child: Icon(
+            Icons.add_photo_alternate_outlined,
+            size: 30,
+            color: Color(0xffB4B4B4),
           ),
-          const SizedBox(height: 14),
-          const Text(
-            "Add Photo",
-            style: TextStyle(
-              fontFamily: "Manrope",
-              fontSize: 15,
-              fontWeight: FontWeight.w600,
-              color: AppColors.textSecondary,
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
@@ -91,22 +69,18 @@ class UploadPhotoTile extends StatelessWidget {
 
         if (onRemove != null)
           Positioned(
-            top: 8,
-            right: 8,
+            top: 6,
+            right: 6,
             child: GestureDetector(
               onTap: onRemove,
               child: Container(
-                width: 30,
-                height: 30,
+                width: 24,
+                height: 24,
                 decoration: const BoxDecoration(
                   color: Colors.black54,
                   shape: BoxShape.circle,
                 ),
-                child: const Icon(
-                  Icons.close,
-                  size: 18,
-                  color: Colors.white,
-                ),
+                child: const UploadPlaceholderIcon()
               ),
             ),
           ),

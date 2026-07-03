@@ -7,7 +7,6 @@ import 'package:test_project/screens/start_screen/widgets/upload_photo_tile.dart
 
 
 import 'gender_screen.dart';
-
 import 'location_screen.dart';
 import 'looking_for_screen.dart';
 
@@ -34,15 +33,14 @@ class UploadPhotoScreen extends StatefulWidget {
 class _UploadPhotoScreenState extends State<UploadPhotoScreen> {
   final ImagePicker _picker = ImagePicker();
 
-  final List<File?> _photos = List.generate(6, (_) => null);
+  final List<File?> _photos = List.generate(4, (_) => null);
 
-  int get _photoCount =>
-      _photos.where((element) => element != null).length;
+  int get photoCount => _photos.whereType<File>().length;
 
   Future<void> _pickImage(int index) async {
     final XFile? picked = await _picker.pickImage(
       source: ImageSource.gallery,
-      imageQuality: 85,
+      imageQuality: 90,
     );
 
     if (picked == null) return;
@@ -56,6 +54,16 @@ class _UploadPhotoScreenState extends State<UploadPhotoScreen> {
     setState(() {
       _photos[index] = null;
     });
+  }
+
+  Widget tile(int index) {
+    return UploadPhotoTile(
+      image: _photos[index],
+      onTap: () => _pickImage(index),
+      onRemove: _photos[index] != null
+          ? () => _removeImage(index)
+          : null,
+    );
   }
 
   void _continue() {
@@ -80,53 +88,58 @@ class _UploadPhotoScreenState extends State<UploadPhotoScreen> {
       currentStep: 6,
       totalSteps: 7,
 
-      title: "Upload your photos",
+      title: "Upload Photos",
 
       subtitle:
-      "Add at least 2 photos to complete your profile. Your first photo will be your profile picture.",
+      "You're almost there! Add at least one\npictures. Also can upload picture later.",
 
       buttonText: "Continue",
 
-      buttonEnabled: _photoCount >= 2,
+      buttonEnabled: true,
 
       onButtonPressed: _continue,
 
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          GridView.builder(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            itemCount: 6,
-            gridDelegate:
-            const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              crossAxisSpacing: 18,
-              mainAxisSpacing: 18,
-              childAspectRatio: 1,
-            ),
-            itemBuilder: (context, index) {
-              return UploadPhotoTile(
-                image: _photos[index],
-                onTap: () => _pickImage(index),
-                onRemove: _photos[index] != null
-                    ? () => _removeImage(index)
-                    : null,
-              );
-            },
-          ),
+      child: SizedBox(
+        height: 300,
+        child: Stack(
+          children: [
 
-          const SizedBox(height: 24),
-
-          Text(
-            "$_photoCount / 6 photos selected",
-            style: const TextStyle(
-              fontFamily: "Manrope",
-              fontSize: 14,
-              fontWeight: FontWeight.w600,
+            /// Top photo
+            Positioned(
+              top: 0,
+              left: 0,
+              right: 0,
+              child: Center(
+                child: tile(0),
+              ),
             ),
-          ),
-        ],
+
+            /// Bottom Left
+            Positioned(
+              top: 150,
+              left: 0,
+              child: tile(1),
+            ),
+
+            /// Bottom Center
+            Positioned(
+              top: 150,
+              left: 0,
+              right: 0,
+              child: Center(
+                child: tile(2),
+              ),
+            ),
+
+            /// Bottom Right
+            Positioned(
+              top: 150,
+              right: 0,
+
+              child: tile(3),
+            ),
+          ],
+        ),
       ),
     );
   }
