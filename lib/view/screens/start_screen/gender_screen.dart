@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:test_project/screens/start_screen/widgets/gender_option.dart';
-import 'package:test_project/screens/start_screen/widgets/onboarding_scaffold.dart';
-import 'package:test_project/screens/start_screen/widgets/option_card.dart';
+import 'package:test_project/view/screens/start_screen/widgets/gender_option.dart';
+import 'package:test_project/view/screens/start_screen/widgets/onboarding_scaffold.dart';
 
 
 import 'looking_for_screen.dart';

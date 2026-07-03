@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:test_project/screens/create/create_selection_page.dart';
-import 'package:test_project/screens/widgets/bottom_nav_bar.dart';
-import 'package:test_project/theme/app_colors.dart';
+import 'package:test_project/view/screens/create/create_selection_page.dart';
+import 'package:test_project/view/screens/widgets/bottom_nav_bar.dart';
+import 'package:test_project/config/theme/app_colors.dart';
 
 import 'nav_screen/event_comunity.dart';
 

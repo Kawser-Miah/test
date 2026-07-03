@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../theme/app_colors.dart';
+import '../../../../config/theme/app_colors.dart';
 import 'gradient_button.dart';
 import 'onboarding_progress.dart';
 

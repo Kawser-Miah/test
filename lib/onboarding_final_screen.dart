@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_project/screens/auth/auth_screen.dart';
+import 'package:test_project/view/screens/auth/auth_screen.dart';
 
 class OnboardingFinalScreen extends StatelessWidget {
   const OnboardingFinalScreen({super.key});

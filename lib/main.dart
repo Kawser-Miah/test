@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'screens/create/create_community_screen.dart';
-import 'screens/create/create_event_screen.dart';
-import 'splash/splash_screen.dart';
+import 'view/screens/create/create_community_screen.dart';
+import 'view/screens/create/create_event_screen.dart';
+import 'view/screens/splash/splash_screen.dart';
 
 void main() {
   runApp(const VibeNowApp());

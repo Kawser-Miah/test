@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:test_project/screens/start_screen/widgets/custom_text_field.dart';
-import 'package:test_project/screens/start_screen/widgets/onboarding_scaffold.dart';
-
+import 'package:test_project/view/screens/start_screen/widgets/custom_text_field.dart';
+import 'package:test_project/view/screens/start_screen/widgets/onboarding_scaffold.dart';
 
 import 'birthday_screen.dart';
+
+
 
 class FirstNameScreen extends StatefulWidget {
   const FirstNameScreen({super.key});

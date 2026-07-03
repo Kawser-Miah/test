@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:test_project/screens/auth/widgets/notification_dialog.dart';
-import 'package:test_project/screens/auth/widgets/social_login_button.dart';
+import 'package:test_project/view/screens/auth/widgets/notification_dialog.dart';
+import 'package:test_project/view/screens/auth/widgets/social_login_button.dart';
 
 class AuthScreen extends StatefulWidget {
   const AuthScreen({super.key});

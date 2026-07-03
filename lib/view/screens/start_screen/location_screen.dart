@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:test_project/screens/main_screen.dart';
-import 'package:test_project/screens/start_screen/widgets/location_icon.dart';
-import 'package:test_project/screens/start_screen/widgets/onboarding_scaffold.dart';
+import 'package:test_project/view/screens/main_screen.dart';
+import 'package:test_project/view/screens/start_screen/widgets/location_icon.dart';
+import 'package:test_project/view/screens/start_screen/widgets/onboarding_scaffold.dart';
 
-import '../../theme/app_colors.dart';
+import '../../../config/theme/app_colors.dart';
 
 
 class LocationScreen extends StatefulWidget {

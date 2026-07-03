@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../view/screens/start_screen/first_name_screen.dart';
-
+import '../../start_screen/first_name_screen.dart';
 
 class NotificationDialog extends StatelessWidget {
   const NotificationDialog({super.key});
@@ -105,7 +104,7 @@ class NotificationDialog extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const FirstNameScreen(),
+                              builder: (context) => FirstNameScreen(),
                             ),
                           );
                         },

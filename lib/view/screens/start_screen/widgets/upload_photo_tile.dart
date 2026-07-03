@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:test_project/screens/start_screen/widgets/upload_placeholder_icon.dart';
+import 'package:test_project/view/screens/start_screen/widgets/upload_placeholder_icon.dart';
 
 import 'dashed_border_painter.dart';
 

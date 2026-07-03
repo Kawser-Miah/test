@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:test_project/screens/start_screen/widgets/onboarding_scaffold.dart';
-import 'package:test_project/screens/start_screen/widgets/upload_photo_tile.dart';
+import 'package:test_project/view/screens/start_screen/widgets/onboarding_scaffold.dart';
+import 'package:test_project/view/screens/start_screen/widgets/upload_photo_tile.dart';
 
 
 import 'gender_screen.dart';
