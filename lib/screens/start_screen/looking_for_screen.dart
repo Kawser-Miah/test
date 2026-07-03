@@ -35,9 +35,7 @@ class LookingForScreen extends StatefulWidget {
 class _LookingForScreenState extends State<LookingForScreen> {
   LookingFor? _selected;
 
-  void _continue() {
-    if (_selected == null) return;
-
+  void _skip() {
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -45,7 +43,7 @@ class _LookingForScreenState extends State<LookingForScreen> {
           firstName: widget.firstName,
           birthday: widget.birthday,
           gender: widget.gender,
-          lookingFor: _selected!,
+          lookingFor: _selected ?? LookingFor.notSure,
         ),
       ),
     );
@@ -59,14 +57,13 @@ class _LookingForScreenState extends State<LookingForScreen> {
 
       title: "What are you looking for?",
 
-      subtitle:
-          "Choose one option. You can always change it later from your profile.",
+      subtitle: "No pressure — you can change this anytime.",
 
-      buttonText: "Continue",
+      buttonText: "Skip",
 
-      buttonEnabled: _selected != null,
+      buttonEnabled: true,
 
-      onButtonPressed: _continue,
+      onButtonPressed: _skip,
 
       child: GridView.count(
         shrinkWrap: true,
