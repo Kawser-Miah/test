@@ -31,44 +31,52 @@ class _InterestsScreenState extends State<InterestsScreen> {
 
   final List<Map<String, dynamic>> _interests = [
     {
+      "title": "Coffee",
+      "icon": Icons.coffee_outlined,
+    },
+    {
       "title": "Music",
       "icon": Icons.music_note_rounded,
     },
     {
-      "title": "Travel",
-      "icon": Icons.flight_takeoff_rounded,
+      "title": "Chat",
+      "icon": Icons.chat_bubble_outline_rounded,
+    },
+    {
+      "title": "Sports",
+      "icon": Icons.sports_gymnastics_rounded,
+    },
+    {
+      "title": "Books",
+      "icon": Icons.menu_book_rounded,
+    },
+    {
+      "title": "Photo",
+      "icon": Icons.camera_alt_outlined,
+    },
+    {
+      "title": "Art",
+      "icon": Icons.palette_outlined,
+    },
+    {
+      "title": "Tech",
+      "icon": Icons.hub_outlined,
     },
     {
       "title": "Food",
       "icon": Icons.restaurant_rounded,
     },
     {
-      "title": "Gaming",
-      "icon": Icons.sports_esports_rounded,
-    },
-    {
-      "title": "Reading",
-      "icon": Icons.menu_book_rounded,
+      "title": "Travel",
+      "icon": Icons.flight_takeoff_rounded,
     },
     {
       "title": "Fitness",
       "icon": Icons.fitness_center_rounded,
     },
     {
-      "title": "Movies",
-      "icon": Icons.movie_creation_outlined,
-    },
-    {
-      "title": "Photography",
-      "icon": Icons.camera_alt_outlined,
-    },
-    {
-      "title": "Sports",
-      "icon": Icons.sports_soccer_rounded,
-    },
-    {
-      "title": "Pets",
-      "icon": Icons.pets_outlined,
+      "title": "Gaming",
+      "icon": Icons.sports_esports_rounded,
     },
   ];
 
@@ -82,7 +90,7 @@ class _InterestsScreenState extends State<InterestsScreen> {
     });
   }
 
-  void _continue() {
+  void _skip() {
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -103,16 +111,15 @@ class _InterestsScreenState extends State<InterestsScreen> {
       currentStep: 5,
       totalSteps: 7,
 
-      title: "Select your interests",
+      title: "What are you into?",
 
-      subtitle:
-      "Choose at least one interest to help us personalize your matches.",
+      subtitle: "You can update your interests anytime.",
 
-      buttonText: "Continue",
+      buttonText: "Skip",
 
-      buttonEnabled: _selectedInterests.isNotEmpty,
+      buttonEnabled: true,
 
-      onButtonPressed: _continue,
+      onButtonPressed: _skip,
 
       child: GridView.builder(
         shrinkWrap: true,
