@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:gradient_borders/box_borders/gradient_box_border.dart';
+import 'package:test_project/view/screens/comunity/widget/creation_option_card.dart';
 
-/// "Create Event or Community" selection screen.
-/// Pixel-matched to the provided design (gradient cards, sparkle icon, pro tip).
+import '../create_event_post/create_event_post.dart';
+
 class CreateEventCommunityPage extends StatelessWidget {
   const CreateEventCommunityPage({super.key});
 
@@ -87,20 +87,25 @@ class CreateEventCommunityPage extends StatelessWidget {
               const SizedBox(height: 24),
 
               // Event card
-              _CreationOptionCard(
+              CreationOptionCard(
                 gradientColors: const [Color(0xFFF472B6), Color(0xFFC084FC)],
                 icon: Icons.calendar_today_outlined,
                 title: 'Event',
                 description:
                     'Organize gatherings, meetups, or special occasions that bring people together',
                 borderColor: const Color(0xFFC084FC),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CreatePostPage()),
+                  );
+                },
               ),
 
               const SizedBox(height: 16),
 
               // Community card
-              _CreationOptionCard(
+              CreationOptionCard(
                 gradientColors: const [Color(0xFF67E8F9), Color(0xFF60A5FA)],
                 icon: Icons.people_outline,
                 title: 'Community',
@@ -159,138 +164,6 @@ class CreateEventCommunityPage extends StatelessWidget {
               ),
 
               const SizedBox(height: 20),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _CreationOptionCard extends StatelessWidget {
-  final List<Color> gradientColors;
-  final IconData icon;
-  final String title;
-  final String description;
-  final Color? borderColor;
-  final VoidCallback onTap;
-
-  const _CreationOptionCard({
-    super.key,
-    required this.gradientColors,
-    required this.icon,
-    required this.title,
-    required this.description,
-    required this.onTap,
-    this.borderColor,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Material(
-      color: Colors.transparent,
-      borderRadius: BorderRadius.circular(18),
-      child: InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(18),
-        child: Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(18),
-            // border: const GradientBoxBorder(
-            //   width: 2.04,
-            //   gradient: LinearGradient(
-            //     begin: Alignment.topRight,
-            //     end: Alignment.bottomLeft,
-            //     colors: [
-            //       Color.fromRGBO(134, 99, 246, 0.5),
-            //       Color.fromRGBO(196, 112, 245, 0.5),
-            //       Color.fromRGBO(87, 194, 255, 0.5),
-            //     ],
-            //     stops: [0.1164, 0.4874, 0.8704],
-            //   ),
-            // ),
-            border: borderColor != null
-                ? const GradientBoxBorder(
-                    width: 2,
-                    gradient: LinearGradient(
-                      begin: Alignment.topRight,
-                      end: Alignment.bottomLeft,
-                      colors: [
-                        Color.fromRGBO(134, 99, 246, 0.5),
-                        Color.fromRGBO(196, 112, 245, 0.5),
-                        Color.fromRGBO(87, 194, 255, 0.5),
-                      ],
-                      stops: [0.1164, 0.4874, 0.8704],
-                    ),
-                  )
-                : Border.all(color: Colors.black12, width: 1),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.05),
-                blurRadius: 10,
-                offset: const Offset(0, 4),
-              ),
-            ],
-          ),
-          clipBehavior: Clip.antiAlias,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // Top Gradient
-              Container(
-                width: double.infinity,
-                height: 130,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(15),
-                    topRight: Radius.circular(15),
-                  ),
-
-                  gradient: LinearGradient(
-                    colors: gradientColors,
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                ),
-                alignment: Alignment.center,
-                child: Container(
-                  width: 56,
-                  height: 56,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.white.withOpacity(0.3),
-                  ),
-                  child: Icon(icon, size: 26, color: Colors.black87),
-                ),
-              ),
-
-              // Bottom Content
-              Padding(
-                padding: const EdgeInsets.fromLTRB(16, 14, 16, 16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title,
-                      style: const TextStyle(
-                        fontSize: 17,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black87,
-                      ),
-                    ),
-                    const SizedBox(height: 6),
-                    Text(
-                      description,
-                      style: const TextStyle(
-                        fontSize: 13.5,
-                        color: Colors.black54,
-                        height: 1.35,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
             ],
           ),
         ),
