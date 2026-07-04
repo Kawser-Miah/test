@@ -8,6 +8,26 @@ class AppColors {
   AppColors._();
 
   // ═══════════════════════════════════════════════════════════════════════
+  //  MATERIAL ALIASES
+  //  Named wrappers around Colors.* so no page imports raw Material colors.
+  // ═══════════════════════════════════════════════════════════════════════
+  /// Also the app's card-surface and inactive-progress-bar color.
+  static const Color white = Colors.white;
+  static const Color black = Colors.black;
+  static const Color grey = Colors.grey;
+  static const Color red = Colors.red;
+  static const Color transparent = Colors.transparent;
+
+  /// Black at 87% opacity (default "black87" text/icon color)
+  static const Color textBlackPrimary = Colors.black87;
+
+  /// Black at 54% opacity (default "black54" secondary text color)
+  static const Color textBlackSecondary = Colors.black54;
+
+  /// Black at 12% opacity (default "black12" border/shadow color)
+  static const Color borderBlack12 = Colors.black12;
+
+  // ═══════════════════════════════════════════════════════════════════════
   //  BACKGROUND
   // ═══════════════════════════════════════════════════════════════════════
   /// Scaffold / onboarding background (#F1F5F9)
@@ -28,14 +48,8 @@ class AppColors {
   /// Primary blue (#4DB6FF)
   static const Color primaryBlue = Color(0xFF4DB6FF);
 
-  /// Primary purple (#8B5CF6)
+  /// Primary purple (#8B5CF6). Also the "selected" border/progress-active color.
   static const Color primaryPurple = Color(0xFF8B5CF6);
-
-  static const LinearGradient primaryGradient = LinearGradient(
-    begin: Alignment.centerLeft,
-    end: Alignment.centerRight,
-    colors: [primaryBlue, primaryPurple],
-  );
 
   // ═══════════════════════════════════════════════════════════════════════
   //  TEXT
@@ -52,33 +66,21 @@ class AppColors {
   /// Onboarding subtitle (#6B7280)
   static const Color textOnboardingSubtitle = Color(0xFF6B7280);
 
-  /// Auth screen title (#202124)
-  static const Color textAuthTitle = Color(0xFF202124);
-
-  /// Auth screen subtitle (#303030)
-  static const Color textAuthSubtitle = Color(0xFF303030);
-
-  /// Auth terms / legal text (#727272)
-  static const Color textAuthTerms = Color(0xFF727272);
-
   /// Feature tile text (#23233C)
   static const Color textFeatureTile = Color(0xFF23233C);
 
   /// Gender / option text (#555555)
   static const Color textOption = Color(0xFF555555);
 
-  /// Card / grid item text (#666666)
-  static const Color textCard = Color(0xFF666666);
-
   /// Amber pro-tip heading text (#B07700)
   static const Color textAmber = Color(0xFFB07700);
+
+  /// Muted meta text / icon, e.g. info row (#8A8A8E)
+  static const Color textMuted = Color(0xFF8A8A8E);
 
   // ═══════════════════════════════════════════════════════════════════════
   //  SURFACES & CARDS
   // ═══════════════════════════════════════════════════════════════════════
-  /// White card surface
-  static const Color card = Colors.white;
-
   /// Feature tile background (#F5F7FB)
   static const Color surfaceFeatureTile = Color(0xFFF5F7FB);
 
@@ -112,23 +114,21 @@ class AppColors {
   /// Light blue right (#E8F4FF, animated background)
   static const Color surfaceLightBlueRight = Color(0xFFE8F4FF);
 
+  /// Inactive chip / attendee-count pill background (#F0F0F0)
+  /// Also used for the QR badge and other light-gray round icon badges.
+  static const Color surfaceChipInactive = Color(0xFFF0F0F0);
+
   // ═══════════════════════════════════════════════════════════════════════
   //  BORDERS
   // ═══════════════════════════════════════════════════════════════════════
-  /// Default border (#E6E6E6)
+  /// Default border (#E6E6E6). Also covers feature-tile and event-card borders.
   static const Color border = Color(0xFFE6E6E6);
-
-  /// Feature tile border (#ECECEC)
-  static const Color borderFeatureTile = Color(0xFFECECEC);
 
   /// Dashed placeholder border (#D8DCE6)
   static const Color borderDashed = Color(0xFFD8DCE6);
 
   /// Pro-tip box border (#F3D9EE)
   static const Color borderProTip = Color(0xFFF3D9EE);
-
-  /// Selected border (#8B5CF6 = primaryPurple)
-  static const Color selectedBorder = Color(0xFF8B5CF6);
 
   /// White border at 40% opacity
   static const Color borderWhite40 = Color(0x66FFFFFF);
@@ -145,20 +145,14 @@ class AppColors {
   // ═══════════════════════════════════════════════════════════════════════
   //  ICONS
   // ═══════════════════════════════════════════════════════════════════════
-  /// Default icon (#767676)
+  /// Default icon (#767676). Also covers the location-pin icon.
   static const Color icon = Color(0xFF767676);
-
-  /// Inactive nav icon (#B0B0B0)
-  static const Color iconInactive = Color(0xFFB0B0B0);
 
   /// Hint / upload placeholder icon (#B4B4B4)
   static const Color iconHint = Color(0xFFB4B4B4);
 
   /// Upload placeholder frame (#B8C0CC)
   static const Color iconPlaceholderFrame = Color(0xFFB8C0CC);
-
-  /// Location pin color (#6E6E6E)
-  static const Color iconLocation = Color(0xFF6E6E6E);
 
   /// Feature list icon (#4AA7FF)
   static const Color iconFeature = Color(0xFF4AA7FF);
@@ -243,70 +237,21 @@ class AppColors {
   /// Community card blue (#60A5FA)
   static const Color gradientCommunityBlue = Color(0xFF60A5FA);
 
+  // --- Create post "add" button ---
+  /// Add button gradient blue (#4F8EF7)
+  static const Color gradientAddButtonBlue = Color(0xFF4F8EF7);
+  /// Add button gradient purple (#8E54E9)
+  static const Color gradientAddButtonPurple = Color(0xFF8E54E9);
+
   // ═══════════════════════════════════════════════════════════════════════
   //  SHADOWS
   // ═══════════════════════════════════════════════════════════════════════
   /// Black at 8% opacity (#14000000)
   static const Color shadowBlack8 = Color(0x14000000);
 
-  /// Black at 10% opacity (#1A000000)
-  static const Color shadowBlack10 = Color(0x1A000000);
-
   /// Blue glow (#804CBBFF)
   static const Color shadowBlue = Color(0x804CBBFF);
 
   /// Amber glow at 8% (#14FFB300)
   static const Color shadowAmber8 = Color(0x14FFB300);
-
-  // ═══════════════════════════════════════════════════════════════════════
-  //  PROGRESS
-  // ═══════════════════════════════════════════════════════════════════════
-  /// Inactive progress bar = Colors.white
-  static const Color progressInactive = Colors.white;
-
-  /// Active progress bar = primaryPurple (#8B5CF6)
-  static const Color progressActive = Color(0xFF8B5CF6);
-
-  // ═══════════════════════════════════════════════════════════════════════
-  //  COMMON GRADIENTS
-  // ═══════════════════════════════════════════════════════════════════════
-
-  /// Onboarding final screen "Get Started" button gradient
-  static const LinearGradient gradientFinalButton = LinearGradient(
-    colors: [gradientFinalBlue, gradientFinalPurple],
-  );
-
-  /// Onboarding "Next" button gradient
-  static const LinearGradient gradientOnboardingNext = LinearGradient(
-    begin: Alignment.centerLeft,
-    end: Alignment.centerRight,
-    colors: [gradientButtonCyan, gradientButtonPurple],
-  );
-
-  /// Progress bar active gradient
-  static const LinearGradient gradientProgress = LinearGradient(
-    begin: Alignment.centerLeft,
-    end: Alignment.centerRight,
-    colors: [gradientProgressStart, primaryPurple],
-  );
-
-  /// Notification "Allow" button gradient
-  static const LinearGradient gradientAllow = LinearGradient(
-    colors: [gradientAllowCyan, gradientAllowPink, gradientAllowPurple],
-  );
-
-  /// Bottom nav FAB gradient
-  static const LinearGradient gradientFab = LinearGradient(
-    begin: Alignment(0.75, -1.0),
-    end: Alignment(-0.75, 1.0),
-    colors: [gradientFabPurple, gradientFabPink, gradientFabBlue],
-    stops: [0.1164, 0.4874, 0.8704],
-  );
-
-  /// Create selection screen background gradient
-  static const LinearGradient gradientCreateBg = LinearGradient(
-    begin: Alignment.topCenter,
-    end: Alignment.bottomCenter,
-    colors: [backgroundGradientStart, backgroundGradientEnd],
-  );
 }

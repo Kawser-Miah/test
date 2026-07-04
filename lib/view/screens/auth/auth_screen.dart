@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_project/config/theme/app_colors.dart';
 import 'package:test_project/view/screens/auth/widgets/notification_dialog.dart';
 import 'package:test_project/view/screens/auth/widgets/social_login_button.dart';
 
@@ -22,7 +23,7 @@ class _AuthScreenState extends State<AuthScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffEEF5FB),
+      backgroundColor: AppColors.backgroundAuth,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -35,7 +36,7 @@ class _AuthScreenState extends State<AuthScreen> {
                 style: const TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.w600,
-                  color: Color(0xff202124),
+                  color: AppColors.textPrimary,
                 ),
               ),
 
@@ -43,7 +44,7 @@ class _AuthScreenState extends State<AuthScreen> {
 
               const Text(
                 "Create an Account",
-                style: TextStyle(fontSize: 16, color: Color(0xff303030)),
+                style: TextStyle(fontSize: 16, color: AppColors.textPrimary),
               ),
 
               const Spacer(),
@@ -55,7 +56,7 @@ class _AuthScreenState extends State<AuthScreen> {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 14,
-                    color: Color(0xff727272),
+                    color: AppColors.textSecondary,
                     height: 1.6,
                   ),
                 ),
@@ -66,7 +67,7 @@ class _AuthScreenState extends State<AuthScreen> {
               SocialLoginButton(
                 icon: Icons.facebook,
                 title: "Facebook",
-                iconColor: const Color(0xff1877F2),
+                iconColor: AppColors.iconFacebook,
                 onPressed: () {
                   Future.delayed(const Duration(milliseconds: 500), () {
                     showDialog(
@@ -83,7 +84,7 @@ class _AuthScreenState extends State<AuthScreen> {
               SocialLoginButton(
                 icon: Icons.g_mobiledata,
                 title: "Google",
-                iconColor: Colors.red,
+                iconColor: AppColors.red,
                 onPressed: () {},
               ),
 
@@ -92,7 +93,7 @@ class _AuthScreenState extends State<AuthScreen> {
               SocialLoginButton(
                 icon: Icons.apple,
                 title: "Apple",
-                iconColor: Colors.black,
+                iconColor: AppColors.black,
                 onPressed: () {},
               ),
 
@@ -100,7 +101,7 @@ class _AuthScreenState extends State<AuthScreen> {
 
               const Text(
                 "Having trouble in sign in?",
-                style: TextStyle(color: Colors.grey, fontSize: 15),
+                style: TextStyle(color: AppColors.grey, fontSize: 15),
               ),
 
               const SizedBox(height: 35),

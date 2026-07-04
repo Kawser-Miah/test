@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:test_project/config/theme/app_colors.dart';
+import 'package:test_project/config/theme/app_gradient.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class BottomNavBar extends StatelessWidget {
@@ -15,10 +17,10 @@ class BottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        color: Colors.white,
+        color: AppColors.white,
         boxShadow: [
           BoxShadow(
-            color: Color(0x14000000),
+            color: AppColors.shadowBlack8,
             blurRadius: 20,
             offset: Offset(0, -4),
           ),
@@ -42,7 +44,7 @@ class BottomNavBar extends StatelessWidget {
 
               // 1 - Community (People)
               _NavItem(
-                assetName: 'comunity',
+                assetName: 'community',
                 index: 1,
                 currentIndex: currentIndex,
                 onTap: onTap,
@@ -134,23 +136,10 @@ class _CenterFab extends StatelessWidget {
         padding: const EdgeInsets.all(4),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(40),
-          gradient: const LinearGradient(
-            begin: Alignment(0.75, -1.0), // ≈232.79°
-            end: Alignment(-0.75, 1.0),
-            colors: [
-              Color(0xFF8663F6),
-              Color(0xFFC470F5),
-              Color(0xFF57C2FF),
-            ],
-            stops: [
-              0.1164,
-              0.4874,
-              0.8704,
-            ],
-          ),
+          gradient: AppGradients.fab,
           boxShadow: [
             BoxShadow(
-              color: const Color(0x804CBBFF), // #4CBBFF80
+              color: AppColors.shadowBlue,
               blurRadius: 36,
               offset: const Offset(0, 0),
             ),
@@ -159,7 +148,7 @@ class _CenterFab extends StatelessWidget {
           child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(36),
-            color: Colors.transparent,
+            color: AppColors.transparent,
           ),
           child: Center(
             child: SvgPicture.asset(

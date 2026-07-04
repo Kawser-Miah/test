@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 /// Placeholder destination for the `/create-community` route.
 ///
 /// Replace with the real "create community" form. Kept minimal so the
-/// navigation from [CreateSelectionPage] works out of the box.
+/// navigation from [CreateSelectionScreen] works out of the box.
 class CreateCommunityScreen extends StatelessWidget {
   const CreateCommunityScreen({super.key});
 

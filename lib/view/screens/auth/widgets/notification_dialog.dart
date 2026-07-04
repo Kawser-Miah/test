@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:test_project/config/theme/app_colors.dart';
+import 'package:test_project/config/theme/app_gradient.dart';
 
-import '../../start_screen/first_name_screen.dart';
+import '../../onboarding/first_name_screen.dart';
 
 class NotificationDialog extends StatelessWidget {
   const NotificationDialog({super.key});
@@ -8,7 +10,7 @@ class NotificationDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dialog(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.white,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 24),
@@ -18,7 +20,7 @@ class NotificationDialog extends StatelessWidget {
             RichText(
               textAlign: TextAlign.center,
               text: const TextSpan(
-                style: TextStyle(color: Colors.black, fontSize: 18),
+                style: TextStyle(color: AppColors.black, fontSize: 18),
                 children: [
                   TextSpan(
                     text: "vibe.now",
@@ -40,7 +42,7 @@ class NotificationDialog extends StatelessWidget {
               style: TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w400,
-                color: Colors.grey,
+                color: AppColors.grey,
                 height: 1.5,
               ),
             ),
@@ -54,8 +56,8 @@ class NotificationDialog extends StatelessWidget {
                     height: 48,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xffEEF3F8),
-                        foregroundColor: Colors.black,
+                        backgroundColor: AppColors.surfaceCancelButton,
+                        foregroundColor: AppColors.black,
                         elevation: 0,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(24),
@@ -83,19 +85,13 @@ class NotificationDialog extends StatelessWidget {
                     child: DecoratedBox(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(24),
-                        gradient: const LinearGradient(
-                          colors: [
-                            Color(0xff62CCFF),
-                            Color(0xffC35CFF),
-                            Color(0xff705CF6),
-                          ],
-                        ),
+                        gradient: AppGradients.allow,
                       ),
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.transparent,
-                          shadowColor: Colors.transparent,
-                          foregroundColor: Colors.white,
+                          backgroundColor: AppColors.transparent,
+                          shadowColor: AppColors.transparent,
+                          foregroundColor: AppColors.white,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(28),
                           ),
@@ -104,7 +100,7 @@ class NotificationDialog extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => FirstNameScreen(),
+                              builder: (context) => const FirstNameScreen(),
                             ),
                           );
                         },

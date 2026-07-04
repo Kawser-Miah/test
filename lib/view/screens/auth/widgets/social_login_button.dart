@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_project/config/theme/app_colors.dart';
 
 class SocialLoginButton extends StatelessWidget {
   final IconData icon;
@@ -22,10 +23,10 @@ class SocialLoginButton extends StatelessWidget {
       width: double.infinity,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.white,
-          foregroundColor: Colors.black,
+          backgroundColor: AppColors.white,
+          foregroundColor: AppColors.black,
           elevation: 3,
-          shadowColor: Colors.black12,
+          shadowColor: AppColors.borderBlack12,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(40),
           ),

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:test_project/view/screens/create/create_selection_page.dart';
+import 'package:test_project/view/screens/create/create_selection_screen.dart';
 import 'package:test_project/view/screens/widgets/bottom_nav_bar.dart';
 import 'package:test_project/config/theme/app_colors.dart';
 
-import 'comunity/event_comunity.dart';
+import 'community/community_selection_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -18,8 +18,8 @@ class _MainScreenState extends State<MainScreen> {
 
   final List<Widget> _pages = const [
     _PlaceholderPage(label: 'Explore'),
-    CreateEventCommunityPage(),
-    CreateSelectionPage(),
+    CommunitySelectionScreen(),
+    CreateSelectionScreen(),
     _PlaceholderPage(label: 'Messages'),
     _PlaceholderPage(label: 'Profile'),
   ];
