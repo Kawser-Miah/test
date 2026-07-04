@@ -37,7 +37,7 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
               goingCount: 16,
               attending: '5/10 attending',
               isInterested: _interested[0],
-              gradient: AppGradients.eventCardAccent,
+              gradient: AppGradients.fab,
               onInterestedTap: () {
                 setState(() => _interested[0] = !_interested[0]);
               },
@@ -54,7 +54,7 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
               goingCount: 16,
               attending: '5/10 attending',
               isInterested: _interested[1],
-              gradient: AppGradients.eventCardAccent,
+              gradient: AppGradients.fab,
               onInterestedTap: () {
                 setState(() => _interested[1] = !_interested[1]);
               },
@@ -125,7 +125,7 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
           width: 40,
           height: 40,
           decoration: const BoxDecoration(
-            gradient: AppGradients.addButton,
+            gradient: AppGradients.fab,
             shape: BoxShape.circle,
           ),
           child: const Icon(Icons.add, color: AppColors.white, size: 22),

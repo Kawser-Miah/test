@@ -32,7 +32,7 @@ class GradientButton extends StatelessWidget {
         height: height,
         child: DecoratedBox(
           decoration: BoxDecoration(
-            gradient: AppGradients.primary,
+            gradient: AppGradients.fab,
             borderRadius: BorderRadius.circular(30),
           ),
           child: ElevatedButton(

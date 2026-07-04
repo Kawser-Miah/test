@@ -185,31 +185,11 @@ class AppColors {
   //  GRADIENT COLORS (individual stops)
   // ═══════════════════════════════════════════════════════════════════════
 
-  // --- Onboarding final screen ---
-  /// Final screen gradient blue (#5EC6FF)
-  static const Color gradientFinalBlue = Color(0xFF5EC6FF);
-  /// Final screen gradient purple (#9658FF)
-  static const Color gradientFinalPurple = Color(0xFF9658FF);
-
-  // --- Onboarding button ---
-  /// Button gradient cyan-blue (#5AC8FA)
-  static const Color gradientButtonCyan = Color(0xFF5AC8FA);
-  /// Button gradient purple (#9B59F5)
-  static const Color gradientButtonPurple = Color(0xFF9B59F5);
-
   // --- Onboarding progress ---
   /// Progress gradient start (#45B7FF)
   static const Color gradientProgressStart = Color(0xFF45B7FF);
 
-  // --- Notification allow button ---
-  /// Allow button cyan (#62CCFF)
-  static const Color gradientAllowCyan = Color(0xFF62CCFF);
-  /// Allow button pink (#C35CFF)
-  static const Color gradientAllowPink = Color(0xFFC35CFF);
-  /// Allow button purple (#705CF6)
-  static const Color gradientAllowPurple = Color(0xFF705CF6);
-
-  // --- FAB (bottom nav) ---
+  // --- FAB (bottom nav) / the app's single button gradient ---
   /// FAB gradient purple (#8663F6)
   static const Color gradientFabPurple = Color(0xFF8663F6);
   /// FAB gradient pink (#C470F5)
@@ -236,12 +216,6 @@ class AppColors {
   static const Color gradientCommunityCyan = Color(0xFF67E8F9);
   /// Community card blue (#60A5FA)
   static const Color gradientCommunityBlue = Color(0xFF60A5FA);
-
-  // --- Create post "add" button ---
-  /// Add button gradient blue (#4F8EF7)
-  static const Color gradientAddButtonBlue = Color(0xFF4F8EF7);
-  /// Add button gradient purple (#8E54E9)
-  static const Color gradientAddButtonPurple = Color(0xFF8E54E9);
 
   // ═══════════════════════════════════════════════════════════════════════
   //  SHADOWS

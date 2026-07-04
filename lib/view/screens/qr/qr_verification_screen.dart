@@ -131,7 +131,7 @@ class _TabPill extends StatelessWidget {
         child: Container(
           height: 48,
           decoration: BoxDecoration(
-            gradient: active ? AppGradients.primary : null,
+            gradient: active ? AppGradients.fab : null,
             color: active ? null : AppColors.white,
             borderRadius: BorderRadius.circular(30),
             border: active ? null : Border.all(color: AppColors.border),

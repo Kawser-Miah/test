@@ -134,10 +134,10 @@ class WelcomeScreen extends StatelessWidget {
                       child: DecoratedBox(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(40),
-                          gradient: AppGradients.onboardingNext,
+                          gradient: AppGradients.fab,
                           boxShadow: [
                             BoxShadow(
-                              color: AppColors.gradientButtonPurple
+                              color: AppColors.gradientFabPurple
                                   .withValues(alpha: 0.35),
                               blurRadius: 20,
                               offset: const Offset(0, 8),

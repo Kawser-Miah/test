@@ -85,7 +85,7 @@ class NotificationDialog extends StatelessWidget {
                     child: DecoratedBox(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(24),
-                        gradient: AppGradients.allow,
+                        gradient: AppGradients.fab,
                       ),
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(

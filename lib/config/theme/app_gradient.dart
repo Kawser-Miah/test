@@ -18,40 +18,14 @@ const GradientRotation kAppGradientRotation = GradientRotation(
 class AppGradients {
   AppGradients._();
 
-  static const LinearGradient primary = LinearGradient(
-    colors: [AppColors.primaryBlue, AppColors.primaryPurple],
-    transform: kAppGradientRotation,
-  );
-
-  /// Onboarding final screen "Get Started" button gradient.
-  static const LinearGradient finalButton = LinearGradient(
-    colors: [AppColors.gradientFinalBlue, AppColors.gradientFinalPurple],
-    transform: kAppGradientRotation,
-  );
-
-  /// Onboarding "Next" button gradient.
-  static const LinearGradient onboardingNext = LinearGradient(
-    colors: [AppColors.gradientButtonCyan, AppColors.gradientButtonPurple],
-    transform: kAppGradientRotation,
-  );
-
   /// Onboarding progress bar active-step gradient.
   static const LinearGradient progress = LinearGradient(
     colors: [AppColors.gradientProgressStart, AppColors.primaryPurple],
     transform: kAppGradientRotation,
   );
 
-  /// Notification "Allow" button gradient.
-  static const LinearGradient allow = LinearGradient(
-    colors: [
-      AppColors.gradientAllowCyan,
-      AppColors.gradientAllowPink,
-      AppColors.gradientAllowPurple,
-    ],
-    transform: kAppGradientRotation,
-  );
-
-  /// Bottom-nav FAB / "add" gradient.
+  /// The app's single button gradient (bottom-nav FAB, and every other
+  /// gradient-filled button/pill in the app).
   static const LinearGradient fab = LinearGradient(
     colors: [
       AppColors.gradientFabPurple,
@@ -86,29 +60,6 @@ class AppGradients {
   /// Community card gradient.
   static const LinearGradient community = LinearGradient(
     colors: [AppColors.gradientCommunityCyan, AppColors.gradientCommunityBlue],
-    transform: kAppGradientRotation,
-  );
-
-  /// Splash/intro background gradient.
-  static const LinearGradient intro = LinearGradient(
-    colors: [AppColors.gradientIntroCyan, AppColors.gradientIntroPeriwinkle],
-    transform: kAppGradientRotation,
-  );
-
-  /// Event card accent border/badge gradient (blue → purple → pink).
-  static const LinearGradient eventCardAccent = LinearGradient(
-    colors: [
-      AppColors.gradientFabBlue,
-      AppColors.gradientFabPurple,
-      AppColors.gradientFabPink,
-    ],
-    stops: [0.1164, 0.4874, 0.8704],
-    transform: kAppGradientRotation,
-  );
-
-  /// Create-post screen "add" button gradient.
-  static const LinearGradient addButton = LinearGradient(
-    colors: [AppColors.gradientAddButtonBlue, AppColors.gradientAddButtonPurple],
     transform: kAppGradientRotation,
   );
 }

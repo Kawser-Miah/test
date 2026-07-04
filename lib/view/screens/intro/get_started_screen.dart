@@ -72,7 +72,7 @@ class GetStartedScreen extends StatelessWidget {
                 child: DecoratedBox(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
-                    gradient: AppGradients.finalButton,
+                    gradient: AppGradients.fab,
                   ),
                   child: ElevatedButton(
                     onPressed: () {
