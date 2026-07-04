@@ -62,6 +62,12 @@ class AppGradients {
     colors: [AppColors.gradientCommunityCyan, AppColors.gradientCommunityBlue],
     transform: kAppGradientRotation,
   );
+
+  /// Soft form-card background (header banner, upload-image box).
+  static const LinearGradient formCard = LinearGradient(
+    colors: [AppColors.surfaceIconCircle, AppColors.white],
+    transform: kAppGradientRotation,
+  );
 }
 
 /// Common widget for painting a gradient background/badge/button.
