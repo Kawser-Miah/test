@@ -5,6 +5,7 @@ import 'package:test_project/config/theme/app_gradient.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:test_project/view/screens/event_post/widgets/event_card.dart';
 import 'package:test_project/view/screens/qr/qr_verification_screen.dart';
+import 'package:test_project/view/screens/create/create_event_screen.dart';
 
 
 class CreatePostScreen extends StatefulWidget {
@@ -120,15 +121,25 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
             ),
           ),
         ),
-        Container(
-          margin: const EdgeInsets.only(right: 16),
-          width: 40,
-          height: 40,
-          decoration: const BoxDecoration(
-            gradient: AppGradients.fab,
-            shape: BoxShape.circle,
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const CreateEventScreen(),
+              ),
+            );
+          },
+          child: Container(
+            margin: const EdgeInsets.only(right: 16),
+            width: 40,
+            height: 40,
+            decoration: const BoxDecoration(
+              gradient: AppGradients.fab,
+              shape: BoxShape.circle,
+            ),
+            child: const Icon(Icons.add, color: AppColors.white, size: 22),
           ),
-          child: const Icon(Icons.add, color: AppColors.white, size: 22),
         ),
       ],
     );
