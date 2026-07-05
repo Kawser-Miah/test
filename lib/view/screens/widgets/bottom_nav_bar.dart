@@ -44,7 +44,7 @@ class BottomNavBar extends StatelessWidget {
 
               // 1 - Community (People)
               _NavItem(
-                assetName: 'community',
+                assetName: 'community_and_event',
                 index: 1,
                 currentIndex: currentIndex,
                 onTap: onTap,

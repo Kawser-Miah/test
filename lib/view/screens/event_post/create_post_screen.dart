@@ -5,7 +5,7 @@ import 'package:test_project/config/theme/app_gradient.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:test_project/view/screens/event_post/widgets/event_card.dart';
 import 'package:test_project/view/screens/qr/qr_verification_screen.dart';
-import 'package:test_project/view/screens/create/create_event_screen.dart';
+import 'package:test_project/view/screens/create/create_event/create_event_screen.dart';
 
 
 class CreatePostScreen extends StatefulWidget {

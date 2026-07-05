@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:test_project/config/theme/app_colors.dart';
 import 'package:test_project/config/theme/app_gradient.dart';
-import 'package:test_project/view/screens/create/widgets/custom_date_picker.dart';
-
-import 'widgets/event_form_field.dart';
-import 'widgets/time_picker_dialog.dart';
-import 'widgets/upload_cover_image_box.dart';
+import 'package:test_project/view/screens/create/create_event/widgets/custom_date_picker.dart';
+import 'package:test_project/view/screens/create/create_event/widgets/event_form_field.dart';
+import 'package:test_project/view/screens/create/create_event/widgets/time_picker_dialog.dart';
+import 'package:test_project/view/screens/create/create_event/widgets/upload_cover_image_box.dart';
 
 class CreateEventScreen extends StatefulWidget {
   const CreateEventScreen({super.key});

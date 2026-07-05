@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:test_project/config/theme/app_colors.dart';
 import 'package:test_project/config/theme/app_gradient.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:test_project/view/screens/community/widgets/creation_option_card.dart';
+import 'package:test_project/view/screens/community_and_event/widgets/creation_option_card.dart';
 
 import '../event_post/create_post_screen.dart';
 

@@ -7,7 +7,7 @@ import 'widgets/qr_scanner_frame.dart';
 enum _QrTab { code, scan }
 
 /// QR verification screen: lets the user show their own QR code, or scan
-/// someone else's, to unlock messaging / join a community chat.
+/// someone else's, to unlock messaging / join a community_and_event chat.
 class QrVerificationScreen extends StatefulWidget {
   const QrVerificationScreen({super.key});
 
@@ -58,7 +58,7 @@ class _QrVerificationScreenState extends State<QrVerificationScreen> {
               const SizedBox(height: 16),
               _InfoBanner(
                 text: _tab == _QrTab.code
-                    ? 'To join the community chat, simply scan each '
+                    ? 'To join the community_and_event chat, simply scan each '
                         "other's QR codes to connect."
                     : 'Share this QR code with your contact both of you '
                         "need to scan each other's codes to unlock "

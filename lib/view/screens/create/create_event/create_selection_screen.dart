@@ -5,7 +5,7 @@ import 'package:test_project/config/theme/app_colors.dart';
 import 'package:test_project/config/theme/app_gradient.dart';
 
 const String _eventRoute = '/create-event';
-const String _communityRoute = '/create-community';
+const String _communityRoute = '/create-community_and_event';
 
 /// Selection screen body for the "Create" tab.
 ///
