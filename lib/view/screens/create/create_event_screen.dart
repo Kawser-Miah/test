@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:test_project/config/theme/app_colors.dart';
 import 'package:test_project/config/theme/app_gradient.dart';
+import 'package:test_project/view/screens/create/widgets/custom_date_picker.dart';
 
 import 'widgets/event_form_field.dart';
-import 'widgets/event_time_picker_dialog.dart';
+import 'widgets/time_picker_dialog.dart';
 import 'widgets/upload_cover_image_box.dart';
 
 class CreateEventScreen extends StatefulWidget {
@@ -37,44 +38,28 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
   }
 
   Future<void> _pickDate() async {
-    FocusScope.of(context).unfocus();
-
-    final now = DateTime.now();
-    final picked = await showDatePicker(
-      context: context,
-      initialDate: _selectedDate ?? now,
-      firstDate: now,
-      lastDate: DateTime(now.year + 5),
-      cancelText: 'Cancel',
-      confirmText: 'Save',
-      builder: (context, child) {
-        return Theme(
-          data: Theme.of(context).copyWith(
-            colorScheme: Theme.of(context).colorScheme.copyWith(
-              primary: AppColors.primaryPurple,
-              onPrimary: AppColors.white,
-              onSurface: AppColors.textPrimary,
-            ),
-          ),
-          child: child!,
-        );
-      },
+    final picked = await showCustomDatePicker(
+      context,
+      initialDate: DateTime.now(),
     );
 
     if (picked == null) return;
 
     setState(() {
       _selectedDate = picked;
-      _dateController.text = DateFormat('dd MMM yyyy').format(picked);
+      _dateController.text =
+          DateFormat('dd MMM yyyy').format(picked);
     });
   }
 
   Future<void> _pickTime() async {
     FocusScope.of(context).unfocus();
 
-    final picked = await showEventTimePicker(
-      context,
-      initialTime: _selectedTime ?? TimeOfDay.now(),
+    final picked = await showDialog<TimeOfDay>(
+      context: context,
+      builder: (context) => TimePickerDialogWidget(
+        initialTime: _selectedTime ?? TimeOfDay.now(),
+      ),
     );
 
     if (picked == null) return;

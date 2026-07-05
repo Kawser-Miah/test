@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:test_project/config/theme/app_colors.dart';
 import 'package:test_project/config/theme/app_gradient.dart';
@@ -52,10 +53,10 @@ class _UploadCoverImageBoxState extends State<UploadCoverImageBox> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Icon(
-                          Icons.image_outlined,
-                          size: 32,
-                          color: AppColors.icon,
+                        SvgPicture.asset(
+                          'assets/logo/galery.svg',
+                          width: 32,
+                          height: 32,
                         ),
                         const SizedBox(height: 10),
                         const Text(
