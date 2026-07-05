@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:test_project/core/services/preference_keys.dart';
+import 'package:test_project/core/services/shared_preferences_service.dart';
 import 'package:test_project/view/screens/main_screen.dart';
 import 'package:test_project/view/screens/onboarding/widgets/location_icon.dart';
 import 'package:test_project/view/screens/onboarding/widgets/onboarding_scaffold.dart';
 
 import '../../../config/theme/app_colors.dart';
-
 
 class LocationScreen extends StatefulWidget {
   final String firstName;
@@ -39,12 +40,14 @@ class _LocationScreenState extends State<LocationScreen> {
     await Future.delayed(const Duration(seconds: 1));
 
     if (!mounted) return;
+    SharedPreferencesService.instance.setBool(
+      PreferenceKeys.isNotFirstTime,
+      true,
+    );
 
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(
-        builder: (_) => const MainScreen(),
-      ),
+      MaterialPageRoute(builder: (_) => const MainScreen()),
     );
   }
 
@@ -74,5 +77,3 @@ class _LocationScreenState extends State<LocationScreen> {
     );
   }
 }
-
-

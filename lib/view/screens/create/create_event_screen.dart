@@ -47,8 +47,7 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
 
     setState(() {
       _selectedDate = picked;
-      _dateController.text =
-          DateFormat('dd MMM yyyy').format(picked);
+      _dateController.text = DateFormat('dd MMM yyyy').format(picked);
     });
   }
 
@@ -57,9 +56,8 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
 
     final picked = await showDialog<TimeOfDay>(
       context: context,
-      builder: (context) => TimePickerDialogWidget(
-        initialTime: _selectedTime ?? TimeOfDay.now(),
-      ),
+      builder: (context) =>
+          TimePickerDialogWidget(initialTime: _selectedTime ?? TimeOfDay.now()),
     );
 
     if (picked == null) return;
@@ -212,7 +210,8 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
               EventFormField(
                 label: 'Rules',
                 controller: _rulesController,
-                hintText: '1. you have to respect all member\n'
+                hintText:
+                    '1. you have to respect all member\n'
                     '1. you have to respect all member',
                 maxLines: 5,
               ),

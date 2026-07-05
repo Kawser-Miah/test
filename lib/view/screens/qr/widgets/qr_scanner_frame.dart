@@ -57,7 +57,6 @@ class _ScannerFramePainter extends CustomPainter {
   static const double _radius = 18;
   static const double _armLength = 15;
 
-
   @override
   void paint(Canvas canvas, Size size) {
     final rect = Rect.fromLTRB(
@@ -66,7 +65,6 @@ class _ScannerFramePainter extends CustomPainter {
       size.width - _inset,
       size.height - _inset,
     );
-
 
     // Bold rounded-corner accents overlaid at each corner.
     final accentPaint = Paint()
@@ -88,7 +86,7 @@ class _ScannerFramePainter extends CustomPainter {
     // Top-left
     drawCorner(Offset(rect.left + _radius, rect.top + _radius), math.pi);
     canvas.drawLine(
-      Offset(rect.left + _radius , rect.top),
+      Offset(rect.left + _radius, rect.top),
       Offset(rect.left + _radius + _armLength, rect.top),
       accentPaint,
     );
