@@ -19,10 +19,6 @@ class VibeNowApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const SplashScreen(),
-      routes: {
-        '/create-event': (context) => const CreateEventScreen(),
-        '/create-community': (context) => const CreateCommunityScreen(),
-      },
     );
   }
 }

@@ -20,6 +20,20 @@ class QrScannerFrame extends StatelessWidget {
         ),
         child: Stack(
           children: [
+            Positioned.fill(
+              child: Padding(
+                padding: const EdgeInsets.all(20),
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: AppColors.primaryBlue,
+                      width: 1.5,
+                    ),
+                    borderRadius: BorderRadius.circular(18),
+                  ),
+                ),
+              ),
+            ),
             const Center(
               child: Icon(
                 Icons.camera_alt_outlined,
@@ -38,9 +52,10 @@ class QrScannerFrame extends StatelessWidget {
 }
 
 class _ScannerFramePainter extends CustomPainter {
-  static const double _inset = 24;
+  static const double _inset = 32;
   static const double _radius = 18;
-  static const double _armLength = 32;
+  static const double _armLength = 15;
+
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -51,19 +66,11 @@ class _ScannerFramePainter extends CustomPainter {
       size.height - _inset,
     );
 
-    // Full thin outline around the whole viewfinder.
-    canvas.drawRRect(
-      RRect.fromRectAndRadius(rect, const Radius.circular(_radius)),
-      Paint()
-        ..color = AppColors.primaryBlue
-        ..strokeWidth = 1.5
-        ..style = PaintingStyle.stroke,
-    );
 
     // Bold rounded-corner accents overlaid at each corner.
     final accentPaint = Paint()
       ..color = AppColors.primaryBlue
-      ..strokeWidth = 3.5
+      ..strokeWidth = 2
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;
 
@@ -80,7 +87,7 @@ class _ScannerFramePainter extends CustomPainter {
     // Top-left
     drawCorner(Offset(rect.left + _radius, rect.top + _radius), math.pi);
     canvas.drawLine(
-      Offset(rect.left + _radius, rect.top),
+      Offset(rect.left + _radius , rect.top),
       Offset(rect.left + _radius + _armLength, rect.top),
       accentPaint,
     );
