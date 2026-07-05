@@ -3,6 +3,7 @@ import 'package:test_project/config/theme/app_colors.dart';
 import 'package:test_project/config/theme/app_gradient.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:test_project/view/screens/community_and_event/widgets/creation_option_card.dart';
+import 'package:test_project/view/screens/community_home/community_home.dart';
 
 import '../event_post/create_post_screen.dart';
 
@@ -82,7 +83,10 @@ class CommunitySelectionScreen extends StatelessWidget {
               const Text(
                 'Choose the type of vibe you want to share',
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 14, color: AppColors.textBlackSecondary),
+                style: TextStyle(
+                  fontSize: 14,
+                  color: AppColors.textBlackSecondary,
+                ),
               ),
 
               const SizedBox(height: 24),
@@ -98,7 +102,9 @@ class CommunitySelectionScreen extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const CreatePostScreen()),
+                    MaterialPageRoute(
+                      builder: (context) => const CreatePostScreen(),
+                    ),
                   );
                 },
               ),
@@ -112,7 +118,14 @@ class CommunitySelectionScreen extends StatelessWidget {
                 title: 'Community',
                 description:
                     'Build a space where people with shared interests can connect and grow together',
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const CommunityPostScreen(),
+                    ),
+                  );
+                },
               ),
 
               const SizedBox(height: 20),
@@ -154,7 +167,9 @@ class CommunitySelectionScreen extends StatelessWidget {
                             TextSpan(
                               text:
                                   'Communities are for long-term connections, Events are for specific occasions, and Vibes are for capturing fleeting moments.',
-                              style: TextStyle(color: AppColors.textBlackSecondary),
+                              style: TextStyle(
+                                color: AppColors.textBlackSecondary,
+                              ),
                             ),
                           ],
                         ),

@@ -26,14 +26,15 @@ class AppGradients {
 
   /// The app's single button gradient (bottom-nav FAB, and every other
   /// gradient-filled button/pill in the app).
-  static const LinearGradient fab = LinearGradient(
+  static const LinearGradient fab =  LinearGradient(
+    begin: Alignment(0.65, -1.0),   // roughly matches 232.79deg
+    end: Alignment(-0.65, 1.0),
     colors: [
-      AppColors.gradientFabPurple,
-      AppColors.gradientFabPink,
-      AppColors.gradientFabBlue,
+      Color(0xFF57C2FF), // top-right: light blue
+      Color(0xFFC470F5), // middle: purple/pink
+      Color(0xFF8663F6), // bottom-left: violet
     ],
-    stops: [0.1164, 0.4874, 0.8704],
-    transform: kAppGradientRotation,
+    stops: [0.0, 0.55, 1.0], // approximates 11.64% / 48.74% / 87.04%
   );
 
   /// Create-selection screen background gradient.
