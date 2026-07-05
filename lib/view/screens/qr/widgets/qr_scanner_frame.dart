@@ -2,6 +2,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:test_project/config/theme/app_colors.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 /// Square camera-preview placeholder matching the "Scan Their QR Code"
 /// viewfinder: a full thin rounded-rect outline with bold rounded-corner
@@ -34,11 +35,11 @@ class QrScannerFrame extends StatelessWidget {
                 ),
               ),
             ),
-            const Center(
-              child: Icon(
-                Icons.camera_alt_outlined,
-                size: 56,
-                color: AppColors.iconHint,
+            Center(
+              child: SvgPicture.asset(
+                'assets/logo/camera.svg',
+                width: 80,
+                height: 80,
               ),
             ),
             Positioned.fill(
