@@ -192,28 +192,36 @@ class AppColors {
   // --- FAB (bottom nav) / the app's single button gradient ---
   /// FAB gradient purple (#8663F6)
   static const Color gradientFabPurple = Color(0xFF8663F6);
+
   /// FAB gradient pink (#C470F5)
   static const Color gradientFabPink = Color(0xFFC470F5);
+
   /// FAB gradient blue (#57C2FF)
   static const Color gradientFabBlue = Color(0xFF57C2FF);
 
   // --- Splash / intro background ---
   /// Intro background cyan (#5ECFFF)
   static const Color gradientIntroCyan = Color(0xFF5ECFFF);
+
   /// Intro background periwinkle (#6B7FFF)
   static const Color gradientIntroPeriwinkle = Color(0xFF6B7FFF);
 
   // --- Event / Community cards ---
   /// Event card pink (#EC4899)
   static const Color gradientEventPink = Color(0xFFEC4899);
+
   /// Event card purple (#A855F7)
   static const Color gradientEventPurple = Color(0xFFA855F7);
+
   /// Event card light pink (#F472B6)
   static const Color gradientEventLightPink = Color(0xFFF472B6);
+
   /// Event card light purple (#C084FC)
   static const Color gradientEventLightPurple = Color(0xFFC084FC);
+
   /// Community card cyan (#67E8F9)
   static const Color gradientCommunityCyan = Color(0xFF67E8F9);
+
   /// Community card blue (#60A5FA)
   static const Color gradientCommunityBlue = Color(0xFF60A5FA);
 

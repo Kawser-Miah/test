@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:test_project/view/screens/create/create_event/create_selection_screen.dart';
+import 'package:test_project/view/screens/profile/profile_page.dart';
 import 'package:test_project/view/screens/widgets/bottom_nav_bar.dart';
 import 'package:test_project/config/theme/app_colors.dart';
 
@@ -21,7 +22,7 @@ class _MainScreenState extends State<MainScreen> {
     CommunitySelectionScreen(),
     CreateSelectionScreen(),
     _PlaceholderPage(label: 'Messages'),
-    _PlaceholderPage(label: 'Profile'),
+    ProfileDetailPage(),
   ];
 
   @override

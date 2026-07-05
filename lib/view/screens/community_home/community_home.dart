@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:test_project/view/screens/community_home/widget/category_filter_card.dart';
 import 'package:test_project/view/screens/community_home/widget/community_card.dart';
 
+import '../create/create_community/create_community_screen.dart';
 import '../create/create_event/create_event_screen.dart';
 import '../qr/qr_verification_screen.dart';
 
@@ -156,7 +157,7 @@ class _CommunityPostScreenState extends State<CommunityPostScreen> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const CreateEventScreen(),
+                builder: (context) => const CreateCommunityScreen(),
               ),
             );
           },

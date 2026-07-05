@@ -124,8 +124,8 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
                         Text(
                           'Create Event',
                           style: TextStyle(
-                            fontSize: 17,
-                            fontWeight: FontWeight.w700,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w400,
                             color: AppColors.textPrimary,
                           ),
                         ),

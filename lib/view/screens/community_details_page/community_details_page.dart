@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:test_project/config/theme/app_colors.dart';
 import 'package:test_project/config/theme/app_gradient.dart';
 
 import '../comunity_member/member.dart';
@@ -43,7 +44,7 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.white,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -69,8 +70,8 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  Colors.black.withValues(alpha: 0.25),
-                  Colors.transparent,
+                  AppColors.black.withValues(alpha: 0.25),
+                  AppColors.transparent,
                 ],
               ),
             ),
@@ -88,7 +89,7 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
         width: double.infinity,
         padding: const EdgeInsets.fromLTRB(20, 12, 20, 24),
         decoration: const BoxDecoration(
-          color: Colors.white,
+          color: AppColors.white,
           borderRadius: BorderRadius.vertical(top: Radius.circular(28)),
         ),
         child: Column(
@@ -101,7 +102,7 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
                 height: 4,
                 margin: const EdgeInsets.only(bottom: 16),
                 decoration: BoxDecoration(
-                  color: Colors.grey.shade300,
+                  color: const Color(0xFFE0E0E0),
                   borderRadius: BorderRadius.circular(2),
                 ),
               ),
@@ -113,7 +114,7 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
               style: const TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
-                color: Colors.black87,
+                color: AppColors.textPrimary,
               ),
             ),
             const SizedBox(height: 10),
@@ -124,12 +125,12 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
                 Icon(
                   Icons.location_on_outlined,
                   size: 16,
-                  color: Colors.grey.shade600,
+                  color: AppColors.textSecondary,
                 ),
                 const SizedBox(width: 4),
                 Text(
                   widget.distance,
-                  style: TextStyle(color: Colors.grey.shade600, fontSize: 13),
+                  style: TextStyle(color: AppColors.textSecondary, fontSize: 13),
                 ),
               ],
             ),
@@ -138,11 +139,11 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
             // Time row
             Row(
               children: [
-                Icon(Icons.access_time, size: 16, color: Colors.grey.shade600),
+                Icon(Icons.access_time, size: 16, color: AppColors.textSecondary),
                 const SizedBox(width: 4),
                 Text(
                   widget.time,
-                  style: TextStyle(color: Colors.grey.shade600, fontSize: 13),
+                  style: TextStyle(color: AppColors.textSecondary, fontSize: 13),
                 ),
               ],
             ),
@@ -162,7 +163,7 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
                   child: const Text(
                     'View All',
                     style: TextStyle(
-                      color: Colors.blue,
+                      color: AppColors.primaryBlue,
                       fontWeight: FontWeight.w500,
                       fontSize: 13,
                     ),
@@ -188,7 +189,7 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
-                color: Colors.black87,
+                color: AppColors.textPrimary,
               ),
             ),
             const SizedBox(height: 8),
@@ -197,7 +198,7 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
               style: TextStyle(
                 fontSize: 13.5,
                 height: 1.5,
-                color: Colors.grey.shade600,
+                color: AppColors.textSecondary,
               ),
             ),
             const SizedBox(height: 22),
@@ -208,7 +209,7 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
-                color: Colors.black87,
+                color: AppColors.textPrimary,
               ),
             ),
             const SizedBox(height: 12),
@@ -221,7 +222,7 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
               style: TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w500,
-                color: Colors.black87,
+                color: AppColors.textPrimary,
               ),
             ),
             const SizedBox(height: 10),
@@ -229,7 +230,7 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
             const SizedBox(height: 4),
             Text(
               '${_experienceController.text.length}/$_maxChars characters',
-              style: TextStyle(fontSize: 12, color: Colors.grey.shade500),
+              style: TextStyle(fontSize: 12, color: AppColors.textSecondary),
             ),
             const SizedBox(height: 20),
 
@@ -261,7 +262,7 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
               left: i * 22.0,
               child: CircleAvatar(
                 radius: 16,
-                backgroundColor: Colors.white,
+                backgroundColor: AppColors.white,
                 child: CircleAvatar(
                   radius: 14,
                   backgroundImage: NetworkImage(avatarUrls[i]),
@@ -272,7 +273,7 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
             left: avatarUrls.length * 22.0,
             child: CircleAvatar(
               radius: 16,
-              backgroundColor: Colors.white,
+              backgroundColor: AppColors.white,
               child: CircleAvatar(
                 radius: 14,
                 backgroundColor: Colors.blue.shade50,
@@ -281,7 +282,7 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
                   style: TextStyle(
                     fontSize: 11,
                     fontWeight: FontWeight.w600,
-                    color: Colors.blue,
+                    color: AppColors.primaryBlue,
                   ),
                 ),
               ),
@@ -310,7 +311,7 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
               'assets/nav_icon/chat.svg',
               width: 20,
               height: 20,
-              color: Colors.white,
+              color: AppColors.white,
             ),
           ),
         ),
@@ -448,8 +449,8 @@ class _EventDetailsPageState extends State<EventDetailsPage> {
       child: ElevatedButton(
         onPressed: () {},
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.black,
-          foregroundColor: Colors.white,
+          backgroundColor: AppColors.black,
+          foregroundColor: AppColors.white,
           elevation: 0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(24),

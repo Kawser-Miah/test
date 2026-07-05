@@ -36,7 +36,7 @@ class EventFormField extends StatelessWidget {
           label,
           style: const TextStyle(
             fontSize: 14,
-            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.w500,
             color: AppColors.textPrimary,
           ),
         ),
@@ -57,9 +57,9 @@ class EventFormField extends StatelessWidget {
             fillColor: AppColors.surfaceChipInactive,
             hintText: hintText,
             hintStyle: const TextStyle(
-              fontSize: 15,
+              fontSize: 14,
               fontWeight: FontWeight.w400,
-              color: AppColors.iconHint,
+              color: AppColors.textSecondary,
             ),
             prefixIcon: leadingIcon != null
                 ? Icon(leadingIcon, size: 20, color: AppColors.icon)
